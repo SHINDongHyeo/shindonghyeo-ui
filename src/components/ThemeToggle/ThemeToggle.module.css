@@ -1,0 +1,4 @@
+:global(:root[data-theme='dark']) .sun,
+:global(:root:not([data-theme='dark'])) .moon {
+	display: none;
+}

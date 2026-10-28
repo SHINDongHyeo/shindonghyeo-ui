@@ -1,0 +1,78 @@
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* 옆에 따라다니는 목차 */
+.sidebar {
+	position: sticky;
+	top: calc(var(--sd-header-height) + 32px);
+	align-self: start;
+	max-height: calc(100vh - var(--sd-header-height) - 64px);
+	overflow-y: auto;
+	font-size: 0.86rem;
+	line-height: 1.5;
+}
+.title {
+	margin: 0 0 12px;
+	color: var(--sd-text-strong);
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+}
+.sidebar .list {
+	border-left: 2px solid var(--sd-border);
+}
+.sidebar .link {
+	display: block;
+	margin-left: -2px;
+	padding: 6px 0 6px 14px;
+	border-left: 2px solid transparent;
+	color: var(--sd-text-muted);
+	transition:
+		color 0.15s ease,
+		border-color 0.15s ease;
+}
+.sidebar .sub .link {
+	padding-left: 28px;
+	font-size: 0.82rem;
+}
+.sidebar .link:hover {
+	color: var(--sd-text-strong);
+}
+.sidebar .active,
+.sidebar .active:hover {
+	border-left-color: var(--sd-accent);
+	color: var(--sd-accent);
+	font-weight: 600;
+}
+
+/* 본문 위에 접었다 펴는 목차 */
+.inline {
+	border: 1px solid var(--sd-border);
+	border-radius: var(--sd-radius-md);
+	background: var(--sd-bg-subtle);
+	font-size: 0.92rem;
+}
+.inline summary {
+	padding: 12px 18px;
+	color: var(--sd-text-strong);
+	font-weight: 700;
+	cursor: pointer;
+}
+.inline .list {
+	padding: 0 18px 14px;
+}
+.inline li {
+	padding: 4px 0;
+}
+.inline .sub {
+	padding-left: 16px;
+}
+.inline .link {
+	color: var(--sd-text-muted);
+}
+.inline .link:hover {
+	color: var(--sd-accent);
+}

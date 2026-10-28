@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>shindonghyeo-ui</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+		/>
+		<script>
+			(() => {
+				let theme;
+				try { theme = localStorage.getItem('theme'); } catch {}
+				if (theme !== 'light' && theme !== 'dark') {
+					theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				}
+				document.documentElement.dataset.theme = theme;
+			})();
+		</script>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="module" src="/playground/main.tsx"></script>
+	</body>
+</html>

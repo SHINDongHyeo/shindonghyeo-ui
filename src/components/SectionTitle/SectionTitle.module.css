@@ -1,0 +1,32 @@
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 16px;
+}
+.title {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 1.3rem;
+	font-variant-numeric: tabular-nums;
+}
+.title::before {
+	content: '';
+	width: 4px;
+	height: 1.1em;
+	border-radius: 4px;
+	background: var(--sd-gradient);
+}
+.action {
+	color: var(--sd-text-muted);
+	font-size: 0.88rem;
+	font-weight: 500;
+}
+.action a {
+	transition: color 0.15s ease;
+}
+.action a:hover {
+	color: var(--sd-accent);
+}

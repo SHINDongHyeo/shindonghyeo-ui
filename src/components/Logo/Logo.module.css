@@ -1,0 +1,16 @@
+.logo {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: var(--size);
+	height: var(--size);
+	border-radius: calc(var(--size) * 0.3);
+	background: var(--sd-gradient);
+	color: #fff;
+	font-size: calc(var(--size) * 0.5);
+	font-weight: 800;
+	letter-spacing: 0;
+	line-height: 1;
+	box-shadow: 0 2px 8px var(--sd-accent-soft);
+}

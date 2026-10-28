@@ -121,6 +121,20 @@ npm run typecheck
 npm run build      # dist/에 JS, 타입, styles.css 생성
 ```
 
+## 배포
+
+main 브랜치에 반영되면 GitHub Actions([`release.yml`](.github/workflows/release.yml))가 타입 검사와 빌드를 하고, `package.json`의 버전이 npm에 아직 없을 때만 자동으로 배포한 뒤 `v버전` 태그를 올립니다. 버전을 올리지 않은 변경은 배포되지 않습니다.
+
+새 버전을 내려면 버전만 올려서 main에 반영하면 됩니다.
+
+```bash
+npm version patch --no-git-tag-version   # 0.1.0 → 0.1.1 (기능 추가는 minor, 호환이 깨지는 변경은 major)
+git commit -am "0.1.1"
+git push
+```
+
+npm 인증은 [Trusted Publishing](https://docs.npmjs.com/trusted-publishers)을 써서 저장해 둔 토큰이 없습니다.
+
 ## 라이선스
 
 MIT

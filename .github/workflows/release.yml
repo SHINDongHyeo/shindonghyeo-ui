@@ -1,0 +1,53 @@
+name: Release
+
+# main에 반영되면 빌드하고, package.json의 버전이 npm에 아직 없을 때만 배포한다.
+# PR에서는 타입 검사와 빌드만 확인한다.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: write # 배포한 버전의 git 태그를 올리기 위해
+  id-token: write # npm Trusted Publishing(OIDC) 인증을 위해
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      # prepare 스크립트가 함께 실행되어 dist/가 빌드된다
+      - run: npm ci
+
+      - run: npm run typecheck
+
+      - name: 배포할 버전인지 확인
+        id: version
+        if: github.event_name == 'push'
+        run: |
+          NAME=$(node -p "require('./package.json').name")
+          VERSION=$(node -p "require('./package.json').version")
+          PUBLISHED=$(npm view "$NAME@$VERSION" version 2>/dev/null || true)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          if [ "$PUBLISHED" = "$VERSION" ]; then
+            echo "$NAME@$VERSION 은 이미 배포되어 있어 건너뜁니다."
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: npm 배포
+        if: steps.version.outputs.publish == 'true'
+        run: npm publish --access public
+
+      - name: 버전 태그 올리기
+        if: steps.version.outputs.publish == 'true'
+        run: |
+          git tag "v${{ steps.version.outputs.version }}"
+          git push origin "v${{ steps.version.outputs.version }}"

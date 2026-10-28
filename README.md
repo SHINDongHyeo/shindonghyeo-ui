@@ -9,7 +9,7 @@
 ## 설치
 
 ```bash
-npm install github:SHINDongHyeo/shindonghyeo-ui
+npm install shindonghyeo-ui
 ```
 
 ## 사용법

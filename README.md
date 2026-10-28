@@ -4,6 +4,8 @@
 
 - **디자인 토큰:** 색, 글꼴, 모서리 둥글기, 레이아웃 폭을 CSS 변수(`--sd-*`)로 정의하고, 라이트/다크 모드를 지원합니다.
 - **React 컴포넌트:** CSS Modules로 스타일을 입혀서 런타임 비용이 없고, Next.js·Astro·Vite 어디서나 동작합니다.
+**컴포넌트 미리보기:** https://shindonghyeo.github.io/shindonghyeo-ui/ (Storybook)
+
 - **서버 렌더링 대응:** 상호작용이 필요한 컴포넌트(`ThemeToggle`, `Toc`, `ReadingProgress`)에만 `'use client'`가 붙어 있습니다.
 
 ## 설치
@@ -116,7 +118,8 @@ import Link from 'next/link';
 
 ```bash
 npm install
-npm run dev        # 플레이그라운드(playground/)에서 컴포넌트 확인
+npm run storybook  # Storybook에서 컴포넌트별로 확인 (http://localhost:6006)
+npm run dev        # 플레이그라운드(playground/)에서 한 화면으로 확인
 npm run typecheck
 npm run build      # dist/에 JS, 타입, styles.css 생성
 ```
@@ -132,6 +135,8 @@ npm version patch --no-git-tag-version   # 0.1.0 → 0.1.1 (기능 추가는 min
 git commit -am "0.1.1"
 git push
 ```
+
+Storybook은 main에 반영될 때마다 [`storybook.yml`](.github/workflows/storybook.yml)이 GitHub Pages에 다시 올립니다. 새 컴포넌트를 만들면 `stories/`에 스토리 파일도 함께 추가해 주세요.
 
 npm 인증은 [Trusted Publishing](https://docs.npmjs.com/trusted-publishers)을 써서 저장해 둔 토큰이 없습니다.
 

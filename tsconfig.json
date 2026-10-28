@@ -11,5 +11,5 @@
     "verbatimModuleSyntax": true,
     "noEmit": true
   },
-  "include": ["src", "playground", "vite.config.ts"]
+  "include": ["src", "playground", "stories", ".storybook", "vite.config.ts"]
 }

@@ -6,6 +6,9 @@
 	margin-bottom: var(--sd-space-4);
 }
 .title {
+	display: flex;
+	align-items: center;
+	gap: var(--sd-space-2);
 	font-size: var(--sd-text-xl);
 	font-variant-numeric: tabular-nums;
 }

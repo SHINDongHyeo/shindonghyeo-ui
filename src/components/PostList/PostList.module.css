@@ -11,17 +11,15 @@
 	align-items: center;
 	gap: var(--sd-space-6);
 	padding: var(--sd-space-5);
-	border: 1px solid transparent;
 	border-radius: var(--sd-radius-lg);
-	transition:
-		background-color var(--sd-duration-base) var(--sd-ease),
-		border-color var(--sd-duration-base) var(--sd-ease),
-		box-shadow var(--sd-duration-base) var(--sd-ease);
+	transition: background-color var(--sd-duration-base) var(--sd-ease);
 }
 .item:hover {
-	border-color: var(--sd-border);
-	background: var(--sd-bg-elevated);
-	box-shadow: var(--sd-shadow);
+	background: var(--sd-bg-subtle);
+}
+.item:focus-visible {
+	outline: 2px solid var(--sd-accent);
+	outline-offset: 2px;
 }
 .body {
 	flex: 1;
@@ -55,14 +53,10 @@
 	color: var(--sd-accent);
 	font-size: var(--sd-text-xl);
 	opacity: 0;
-	transform: translateX(calc(var(--sd-space-2) * -1));
-	transition:
-		opacity var(--sd-duration-base) var(--sd-ease),
-		transform var(--sd-duration-base) var(--sd-ease);
+	transition: opacity var(--sd-duration-base) var(--sd-ease);
 }
 .item:hover .arrow {
 	opacity: 1;
-	transform: none;
 }
 @media (max-width: 640px) {
 	.list {

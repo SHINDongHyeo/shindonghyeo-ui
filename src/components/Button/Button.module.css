@@ -14,13 +14,11 @@
 	text-decoration: none;
 	cursor: pointer;
 	transition:
-		transform var(--sd-duration-fast) var(--sd-ease),
-		box-shadow var(--sd-duration-fast) var(--sd-ease),
+		background-color var(--sd-duration-fast) var(--sd-ease),
 		border-color var(--sd-duration-fast) var(--sd-ease);
 }
 .button:hover {
-	transform: translateY(-1px);
-	box-shadow: var(--sd-shadow);
+	background: var(--sd-bg-subtle);
 }
 .button:focus-visible {
 	outline: 2px solid var(--sd-accent);
@@ -30,4 +28,8 @@
 	border-color: transparent;
 	background: var(--sd-accent);
 	color: var(--sd-on-accent);
+}
+/* 라이트에서는 조금 어둡게, 다크에서는 조금 밝게 */
+.primary:hover {
+	background: color-mix(in srgb, var(--sd-accent) 85%, var(--sd-text-strong));
 }

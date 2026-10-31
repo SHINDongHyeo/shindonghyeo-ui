@@ -80,7 +80,7 @@ import Link from 'next/link';
 | 컴포넌트 | 설명 |
 | --- | --- |
 | `Container` | 본문 폭(680px) 또는 넓은 폭(`wide`, 980px)으로 내용을 가운데 정렬 |
-| `Navbar` | 화면 위에 붙어 있는 반투명 메뉴바. 현재 메뉴는 알약 모양으로 강조 |
+| `Navbar` | 화면 위에 붙어 있는 반투명 메뉴바. 현재 메뉴는 포인트 색 글자로 강조 |
 | `Banner` | 제목, 설명, 메타 정보를 담는 페이지 상단 머리말 |
 | `Logo` | 포인트 색 정사각형 로고 마크 |
 | `Button` | `primary`(포인트 색) / `secondary` 버튼. `href`가 있으면 링크로 렌더링 |
@@ -88,7 +88,7 @@ import Link from 'next/link';
 | `Chip` | 날짜, 읽는 시간 같은 작은 정보 표시 |
 | `AccentText` | 포인트 색 글자 (`GradientText`는 옛 이름으로 남아 있습니다) |
 | `SectionTitle` | 제목과 오른쪽 링크가 한 줄에 놓인 섹션 제목 |
-| `PostList` | 마우스를 올리면 카드처럼 떠오르는 글 목록 |
+| `PostList` | 마우스를 올리면 옅은 배경이 깔리는 글 목록 |
 | `Prose` | 마크다운에서 나온 HTML(제목, 목록, 표, 인용문, 코드)을 꾸미는 본문 영역 |
 | `Toc` | 현재 읽는 제목을 강조하는 목차 (`sidebar` / `inline`) |
 | `ReadingProgress` | 스크롤한 만큼 차오르는 진행 바 |

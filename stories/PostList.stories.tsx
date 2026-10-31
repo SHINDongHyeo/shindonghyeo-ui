@@ -9,7 +9,7 @@ const meta = {
 	parameters: {
 		docs: {
 			description: {
-				component: '마우스를 올리면 카드처럼 떠오르고 화살표가 나타나는 글 목록. `meta`의 항목은 가운뎃점으로 이어집니다.',
+				component: '마우스를 올리면 옅은 배경이 깔리고 화살표가 나타나는 글 목록. `meta`의 항목은 가운뎃점으로 이어집니다.',
 			},
 		},
 	},

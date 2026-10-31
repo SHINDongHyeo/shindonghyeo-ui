@@ -37,16 +37,17 @@
 	font-size: var(--sd-text-md);
 	font-weight: var(--sd-weight-medium);
 	line-height: var(--sd-leading-normal);
-	transition:
-		background-color var(--sd-duration-fast) var(--sd-ease),
-		color var(--sd-duration-fast) var(--sd-ease);
+	transition: color var(--sd-duration-fast) var(--sd-ease);
 }
 .link:hover {
 	color: var(--sd-text-strong);
 }
+.link:focus-visible {
+	outline: 2px solid var(--sd-accent);
+	outline-offset: 2px;
+}
 .active,
 .active:hover {
-	background: var(--sd-accent-soft);
 	color: var(--sd-accent);
 	font-weight: var(--sd-weight-bold);
 }

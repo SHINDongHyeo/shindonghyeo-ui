@@ -7,9 +7,9 @@
 	height: var(--size);
 	border-radius: calc(var(--size) * 0.3);
 	background: var(--sd-gradient);
-	color: #fff;
+	color: var(--sd-on-accent);
 	font-size: calc(var(--size) * 0.5);
-	font-weight: 800;
+	font-weight: var(--sd-weight-heavy);
 	letter-spacing: 0;
 	line-height: 1;
 	box-shadow: 0 2px 8px var(--sd-accent-soft);

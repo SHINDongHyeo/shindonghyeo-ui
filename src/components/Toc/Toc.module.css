@@ -7,19 +7,19 @@
 /* 옆에 따라다니는 목차 */
 .sidebar {
 	position: sticky;
-	top: calc(var(--sd-header-height) + 32px);
+	top: calc(var(--sd-header-height) + var(--sd-space-8));
 	align-self: start;
-	max-height: calc(100vh - var(--sd-header-height) - 64px);
+	max-height: calc(100vh - var(--sd-header-height) - var(--sd-space-16));
 	overflow-y: auto;
-	font-size: 0.86rem;
-	line-height: 1.5;
+	font-size: var(--sd-text-sm);
+	line-height: var(--sd-leading-normal);
 }
 .title {
-	margin: 0 0 12px;
+	margin: 0 0 var(--sd-space-3);
 	color: var(--sd-text-strong);
-	font-size: 0.78rem;
-	font-weight: 700;
-	letter-spacing: 0.08em;
+	font-size: var(--sd-text-xs);
+	font-weight: var(--sd-weight-bold);
+	letter-spacing: var(--sd-tracking-wide);
 }
 .sidebar .list {
 	border-left: 2px solid var(--sd-border);
@@ -27,16 +27,16 @@
 .sidebar .link {
 	display: block;
 	margin-left: -2px;
-	padding: 6px 0 6px 14px;
+	padding: var(--sd-space-1-5) 0 var(--sd-space-1-5) var(--sd-space-3);
 	border-left: 2px solid transparent;
 	color: var(--sd-text-muted);
 	transition:
-		color 0.15s ease,
-		border-color 0.15s ease;
+		color var(--sd-duration-fast) var(--sd-ease),
+		border-color var(--sd-duration-fast) var(--sd-ease);
 }
 .sidebar .sub .link {
-	padding-left: 28px;
-	font-size: 0.82rem;
+	padding-left: var(--sd-space-6);
+	font-size: var(--sd-text-xs);
 }
 .sidebar .link:hover {
 	color: var(--sd-text-strong);
@@ -45,7 +45,7 @@
 .sidebar .active:hover {
 	border-left-color: var(--sd-accent);
 	color: var(--sd-accent);
-	font-weight: 600;
+	font-weight: var(--sd-weight-semibold);
 }
 
 /* 본문 위에 접었다 펴는 목차 */
@@ -53,22 +53,22 @@
 	border: 1px solid var(--sd-border);
 	border-radius: var(--sd-radius-md);
 	background: var(--sd-bg-subtle);
-	font-size: 0.92rem;
+	font-size: var(--sd-text-md);
 }
 .inline summary {
-	padding: 12px 18px;
+	padding: var(--sd-space-3) var(--sd-space-4);
 	color: var(--sd-text-strong);
-	font-weight: 700;
+	font-weight: var(--sd-weight-bold);
 	cursor: pointer;
 }
 .inline .list {
-	padding: 0 18px 14px;
+	padding: 0 var(--sd-space-4) var(--sd-space-3);
 }
 .inline li {
-	padding: 4px 0;
+	padding: var(--sd-space-1) 0;
 }
 .inline .sub {
-	padding-left: 16px;
+	padding-left: var(--sd-space-4);
 }
 .inline .link {
 	color: var(--sd-text-muted);

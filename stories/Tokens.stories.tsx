@@ -15,16 +15,37 @@ const colors = [
 	['--sd-code-bg', '인라인 코드 배경'],
 ];
 
-const radii = ['--sd-radius-sm', '--sd-radius-md', '--sd-radius-lg', '--sd-radius-full'];
+const radii = ['--sd-radius-xs', '--sd-radius-sm', '--sd-radius-md', '--sd-radius-lg', '--sd-radius-full'];
 
 const typeScale = [
-	['2.6rem', '홈 배너 제목'],
-	['2.4rem', '배너 제목'],
-	['1.5rem', '본문 h2'],
-	['1.22rem', '본문 h3, 글 목록 제목'],
-	['17px', '본문'],
-	['0.84rem', '메타 정보'],
+	['--sd-text-4xl', '40px', '배너 제목'],
+	['--sd-text-3xl', '28px', '모바일 배너 제목'],
+	['--sd-text-2xl', '24px', '본문 h2'],
+	['--sd-text-xl', '20px', '본문 h3, 글 목록 제목'],
+	['--sd-text-lg', '18px', '본문 h4, 배너 설명'],
+	['--sd-text-body', '17px', '본문'],
+	['--sd-text-base', '16px', '모바일 본문'],
+	['--sd-text-md', '15px', '버튼, 메뉴, 글 설명'],
+	['--sd-text-sm', '14px', '메타 정보, 푸터, 목차'],
+	['--sd-text-xs', '13px', '라벨, 보조 메타'],
 ];
+
+const spaces = [
+	['--sd-space-0-5', 2],
+	['--sd-space-1', 4],
+	['--sd-space-1-5', 6],
+	['--sd-space-2', 8],
+	['--sd-space-3', 12],
+	['--sd-space-4', 16],
+	['--sd-space-5', 20],
+	['--sd-space-6', 24],
+	['--sd-space-8', 32],
+	['--sd-space-10', 40],
+	['--sd-space-12', 48],
+	['--sd-space-16', 64],
+	['--sd-space-20', 80],
+	['--sd-space-24', 96],
+] as const;
 
 function Tokens() {
 	return (
@@ -74,10 +95,27 @@ function Tokens() {
 				<p style={{ margin: '0 0 16px', color: 'var(--sd-text-muted)' }}>
 					글꼴은 <code>--sd-font-sans</code>(Pretendard)와 <code>--sd-font-mono</code>를 씁니다.
 				</p>
-				{typeScale.map(([size, desc]) => (
-					<div key={size} style={{ display: 'flex', alignItems: 'baseline', gap: 24, padding: '8px 0' }}>
-						<code style={{ width: 72, flexShrink: 0, fontSize: 13 }}>{size}</code>
-						<span style={{ fontSize: size, fontWeight: 700, color: 'var(--sd-text-strong)' }}>{desc}</span>
+				{typeScale.map(([name, px, desc]) => (
+					<div key={name} style={{ display: 'flex', alignItems: 'baseline', gap: 24, padding: '8px 0' }}>
+						<code style={{ width: 160, flexShrink: 0, fontSize: 13 }}>
+							{name} <span style={{ color: 'var(--sd-text-muted)' }}>{px}</span>
+						</code>
+						<span style={{ fontSize: `var(${name})`, fontWeight: 700, color: 'var(--sd-text-strong)' }}>{desc}</span>
+					</div>
+				))}
+			</section>
+
+			<section>
+				<h2 style={{ marginBottom: 16 }}>간격</h2>
+				<p style={{ margin: '0 0 16px', color: 'var(--sd-text-muted)' }}>
+					4px 단위입니다. 여백(margin, padding)과 간격(gap)에는 이 값만 씁니다.
+				</p>
+				{spaces.map(([name, px]) => (
+					<div key={name} style={{ display: 'flex', alignItems: 'center', gap: 24, padding: '4px 0' }}>
+						<code style={{ width: 160, flexShrink: 0, fontSize: 13 }}>
+							{name} <span style={{ color: 'var(--sd-text-muted)' }}>{px}px</span>
+						</code>
+						<div style={{ width: `var(${name})`, height: 12, borderRadius: 2, background: 'var(--sd-accent)' }} />
 					</div>
 				))}
 			</section>
@@ -90,7 +128,7 @@ const meta = {
 	component: Tokens,
 	tags: ['!autodocs'],
 	parameters: {
-		docs: { description: { component: '색, 모서리 둥글기, 글자 크기 토큰. 툴바에서 다크 모드로 바꾸면 다크 값이 보입니다.' } },
+		docs: { description: { component: '색, 모서리 둥글기, 글자 크기, 간격 토큰. 툴바에서 다크 모드로 바꾸면 다크 값이 보입니다.' } },
 	},
 } satisfies Meta<typeof Tokens>;
 

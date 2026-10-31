@@ -1,7 +1,7 @@
 .header {
 	position: sticky;
 	top: 0;
-	z-index: 20;
+	z-index: var(--sd-z-header);
 	background: color-mix(in srgb, var(--sd-bg) 80%, transparent);
 	backdrop-filter: saturate(180%) blur(14px);
 	-webkit-backdrop-filter: saturate(180%) blur(14px);
@@ -11,35 +11,35 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 16px;
+	gap: var(--sd-space-4);
 	height: var(--sd-header-height);
 }
 .brand {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: var(--sd-space-2);
 	color: var(--sd-text-strong);
-	font-size: 1.05rem;
-	font-weight: 800;
-	letter-spacing: -0.035em;
+	font-size: var(--sd-text-lg);
+	font-weight: var(--sd-weight-heavy);
+	letter-spacing: var(--sd-tracking-tight);
 	white-space: nowrap;
 }
 .right {
 	display: flex;
 	align-items: center;
-	gap: 2px;
+	gap: var(--sd-space-0-5);
 }
 .link {
 	display: inline-block;
-	padding: 6px 14px;
+	padding: var(--sd-space-1-5) var(--sd-space-3);
 	border-radius: var(--sd-radius-full);
 	color: var(--sd-text-muted);
-	font-size: 0.93rem;
-	font-weight: 500;
-	line-height: 1.6;
+	font-size: var(--sd-text-md);
+	font-weight: var(--sd-weight-medium);
+	line-height: var(--sd-leading-normal);
 	transition:
-		background-color 0.15s ease,
-		color 0.15s ease;
+		background-color var(--sd-duration-fast) var(--sd-ease),
+		color var(--sd-duration-fast) var(--sd-ease);
 }
 .link:hover {
 	color: var(--sd-text-strong);
@@ -48,23 +48,20 @@
 .active:hover {
 	background: var(--sd-accent-soft);
 	color: var(--sd-accent);
-	font-weight: 700;
+	font-weight: var(--sd-weight-bold);
 }
 .divider {
 	width: 1px;
 	height: 18px;
-	margin: 0 8px;
+	margin: 0 var(--sd-space-2);
 	background: var(--sd-border);
 }
 .actions {
 	display: flex;
 	align-items: center;
-	gap: 2px;
+	gap: var(--sd-space-0-5);
 }
 @media (max-width: 640px) {
-	.link {
-		padding: 6px 11px;
-	}
 	.divider {
 		display: none;
 	}

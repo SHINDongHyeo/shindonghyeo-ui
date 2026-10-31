@@ -1,22 +1,22 @@
 .list {
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
-	margin: 0 -20px;
+	gap: var(--sd-space-1);
+	margin: 0 calc(var(--sd-space-5) * -1);
 	padding: 0;
 	list-style: none;
 }
 .item {
 	display: flex;
 	align-items: center;
-	gap: 24px;
-	padding: 22px 20px;
+	gap: var(--sd-space-6);
+	padding: var(--sd-space-5);
 	border: 1px solid transparent;
 	border-radius: var(--sd-radius-lg);
 	transition:
-		background-color 0.2s ease,
-		border-color 0.2s ease,
-		box-shadow 0.2s ease;
+		background-color var(--sd-duration-base) var(--sd-ease),
+		border-color var(--sd-duration-base) var(--sd-ease),
+		box-shadow var(--sd-duration-base) var(--sd-ease);
 }
 .item:hover {
 	border-color: var(--sd-border);
@@ -28,37 +28,37 @@
 	min-width: 0;
 }
 .title {
-	font-size: 1.22rem;
-	transition: color 0.15s ease;
+	font-size: var(--sd-text-xl);
+	transition: color var(--sd-duration-fast) var(--sd-ease);
 }
 .item:hover .title {
 	color: var(--sd-accent);
 }
 .description {
-	margin: 6px 0 0;
+	margin: var(--sd-space-1-5) 0 0;
 	color: var(--sd-text);
-	font-size: 0.97rem;
-	line-height: 1.65;
+	font-size: var(--sd-text-md);
+	line-height: var(--sd-leading-normal);
 }
 .meta {
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: 12px;
+	margin-top: var(--sd-space-3);
 	color: var(--sd-text-muted);
-	font-size: 0.84rem;
+	font-size: var(--sd-text-sm);
 }
 .meta > :not(:first-child)::before {
 	content: '·';
-	margin: 0 8px;
+	margin: 0 var(--sd-space-2);
 }
 .arrow {
 	color: var(--sd-accent);
-	font-size: 1.2rem;
+	font-size: var(--sd-text-xl);
 	opacity: 0;
-	transform: translateX(-8px);
+	transform: translateX(calc(var(--sd-space-2) * -1));
 	transition:
-		opacity 0.2s ease,
-		transform 0.2s ease;
+		opacity var(--sd-duration-base) var(--sd-ease),
+		transform var(--sd-duration-base) var(--sd-ease);
 }
 .item:hover .arrow {
 	opacity: 1;
@@ -66,10 +66,10 @@
 }
 @media (max-width: 640px) {
 	.list {
-		margin: 0 -12px;
+		margin: 0 calc(var(--sd-space-3) * -1);
 	}
 	.item {
-		padding: 18px 12px;
+		padding: var(--sd-space-4) var(--sd-space-3);
 	}
 	.arrow {
 		display: none;

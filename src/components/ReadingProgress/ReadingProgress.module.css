@@ -2,7 +2,7 @@
 	left: 0;
 	width: 100%;
 	height: 3px;
-	background: var(--sd-gradient);
+	background: var(--sd-accent);
 	transform: scaleX(var(--progress, 0));
 	transform-origin: left;
 	pointer-events: none;
@@ -14,5 +14,5 @@
 .fixed {
 	position: fixed;
 	top: 0;
-	z-index: 30;
+	z-index: var(--sd-z-overlay);
 }

@@ -20,11 +20,11 @@ npm install shindonghyeo-ui
 
 ```tsx
 import 'shindonghyeo-ui/styles.css';
-import { Banner, Button, GradientText } from 'shindonghyeo-ui';
+import { AccentText, Banner, Button } from 'shindonghyeo-ui';
 
 export function Hero() {
 	return (
-		<Banner eyebrow="Dev Log" title={<>안녕하세요, <GradientText>신동혁</GradientText>입니다.</>}>
+		<Banner eyebrow="Dev Log" title={<>안녕하세요, <AccentText>신동혁</AccentText>입니다.</>}>
 			<Button variant="primary" href="/blog">글 둘러보기 →</Button>
 		</Banner>
 	);
@@ -80,15 +80,15 @@ import Link from 'next/link';
 | 컴포넌트 | 설명 |
 | --- | --- |
 | `Container` | 본문 폭(680px) 또는 넓은 폭(`wide`, 980px)으로 내용을 가운데 정렬 |
-| `Navbar` | 화면 위에 붙어 있는 반투명 메뉴바. 현재 메뉴는 알약 모양으로 강조 |
-| `Banner` | 그라데이션과 점 패턴 배경의 페이지 상단 배너 |
-| `Logo` | 그라데이션 정사각형 로고 마크 |
-| `Button` | `primary`(그라데이션) / `secondary` 버튼. `href`가 있으면 링크로 렌더링 |
+| `Navbar` | 화면 위에 붙어 있는 반투명 메뉴바. 현재 메뉴는 포인트 색 글자로 강조 |
+| `Banner` | 제목, 설명, 메타 정보를 담는 페이지 상단 머리말 |
+| `Logo` | 포인트 색 정사각형 로고 마크 |
+| `Button` | `primary`(포인트 색) / `secondary` 버튼. `href`가 있으면 링크로 렌더링 |
 | `IconButton` | 아이콘만 있는 버튼 |
 | `Chip` | 날짜, 읽는 시간 같은 작은 정보 표시 |
-| `GradientText` | 그라데이션 글자 |
-| `SectionTitle` | 왼쪽에 그라데이션 막대가 붙은 섹션 제목 |
-| `PostList` | 마우스를 올리면 카드처럼 떠오르는 글 목록 |
+| `AccentText` | 포인트 색 글자 (`GradientText`는 옛 이름으로 남아 있습니다) |
+| `SectionTitle` | 제목과 오른쪽 링크가 한 줄에 놓인 섹션 제목 |
+| `PostList` | 마우스를 올리면 옅은 배경이 깔리는 글 목록 |
 | `Prose` | 마크다운에서 나온 HTML(제목, 목록, 표, 인용문, 코드)을 꾸미는 본문 영역 |
 | `Toc` | 현재 읽는 제목을 강조하는 목차 (`sidebar` / `inline`) |
 | `ReadingProgress` | 스크롤한 만큼 차오르는 진행 바 |
@@ -99,16 +99,15 @@ import Link from 'next/link';
 
 ## 테마 바꾸기
 
-포인트 색은 두 값만 덮어쓰면 그라데이션, 강조색, 옅은 배경색까지 모두 따라 바뀝니다.
+포인트 색은 `--sd-accent` 하나만 덮어쓰면 링크, 버튼, 옅은 배경색까지 모두 따라 바뀝니다. 버튼 글자색이 잘 보이지 않으면 `--sd-on-accent`도 함께 바꿉니다.
 
 ```css
 :root {
 	--sd-accent: #7c3aed;
-	--sd-accent-2: #db2777;
 }
 :root[data-theme='dark'] {
 	--sd-accent: #a78bfa;
-	--sd-accent-2: #f472b6;
+	--sd-on-accent: #160b2e;
 }
 ```
 

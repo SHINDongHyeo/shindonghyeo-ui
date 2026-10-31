@@ -9,42 +9,32 @@
 	margin: 0 0 1.4em;
 }
 .prose h2 {
-	position: relative;
 	margin: 2.8em 0 0.9em;
-	padding-left: 16px;
-	font-size: 1.5rem;
-}
-.prose h2::before {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0.2em;
-	bottom: 0.2em;
-	width: 4px;
-	border-radius: 4px;
-	background: var(--sd-gradient);
+	padding-bottom: var(--sd-space-2);
+	border-bottom: 1px solid var(--sd-border);
+	font-size: var(--sd-text-2xl);
 }
 .prose h3 {
 	margin: 2em 0 0.7em;
-	font-size: 1.22rem;
+	font-size: var(--sd-text-xl);
 }
 .prose h4 {
 	margin: 1.6em 0 0.6em;
-	font-size: 1.05rem;
+	font-size: var(--sd-text-lg);
 }
 .prose a {
 	color: var(--sd-accent);
 	text-decoration: underline;
 	text-decoration-color: color-mix(in srgb, var(--sd-accent) 40%, transparent);
 	text-underline-offset: 3px;
-	transition: text-decoration-color 0.15s ease;
+	transition: text-decoration-color var(--sd-duration-fast) var(--sd-ease);
 }
 .prose a:hover {
 	text-decoration-color: var(--sd-accent);
 }
 .prose strong {
 	color: var(--sd-text-strong);
-	font-weight: 700;
+	font-weight: var(--sd-weight-bold);
 }
 .prose ul,
 .prose ol {
@@ -60,7 +50,7 @@
 }
 .prose ol > li::marker {
 	color: var(--sd-accent);
-	font-weight: 700;
+	font-weight: var(--sd-weight-bold);
 	font-variant-numeric: tabular-nums;
 }
 .prose img {
@@ -72,7 +62,7 @@
 	margin: 1.8em 0;
 	padding: 1em 1.25em;
 	border-left: 4px solid var(--sd-accent);
-	border-radius: 0 10px 10px 0;
+	border-radius: 0 var(--sd-radius-md) var(--sd-radius-md) 0;
 	background: var(--sd-accent-soft);
 	color: var(--sd-text);
 }
@@ -93,11 +83,11 @@
 	overflow-x: auto;
 	margin: 1.8em 0;
 	border: 1px solid var(--sd-border);
-	border-radius: 10px;
+	border-radius: var(--sd-radius-md);
 	border-collapse: separate;
 	border-spacing: 0;
 	font-size: 0.92em;
-	line-height: 1.6;
+	line-height: var(--sd-leading-normal);
 }
 .prose th,
 .prose td {
@@ -112,18 +102,18 @@
 .prose th {
 	background: var(--sd-bg-subtle);
 	color: var(--sd-text-strong);
-	font-weight: 600;
+	font-weight: var(--sd-weight-semibold);
 	white-space: nowrap;
 }
 .prose td:first-child {
 	white-space: nowrap;
-	font-weight: 500;
+	font-weight: var(--sd-weight-medium);
 }
 
 /* 코드 */
 .prose :not(pre) > code {
 	padding: 0.15em 0.4em;
-	border-radius: 5px;
+	border-radius: var(--sd-radius-xs);
 	background: var(--sd-code-bg);
 	color: var(--sd-text-strong);
 	font-size: 0.86em;
@@ -135,8 +125,8 @@
 	border: 1px solid var(--sd-border);
 	border-radius: var(--sd-radius-md);
 	background: var(--sd-bg-subtle);
-	font-size: 0.86rem;
-	line-height: 1.65;
+	font-size: var(--sd-text-sm);
+	line-height: var(--sd-leading-normal);
 	overflow-x: auto;
 }
 
@@ -152,6 +142,6 @@
 
 @media (max-width: 640px) {
 	.prose h2 {
-		font-size: 1.32rem;
+		font-size: var(--sd-text-xl);
 	}
 }

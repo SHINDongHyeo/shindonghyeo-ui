@@ -1,6 +1,0 @@
-.gradientText {
-	background: var(--sd-gradient);
-	-webkit-background-clip: text;
-	background-clip: text;
-	color: transparent;
-}

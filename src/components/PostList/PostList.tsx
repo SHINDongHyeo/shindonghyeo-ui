@@ -17,7 +17,7 @@ export interface PostListProps {
 	className?: string;
 }
 
-/** 마우스를 올리면 카드처럼 떠오르는 글 목록 */
+/** 마우스를 올리면 옅은 배경이 깔리는 글 목록 */
 export function PostList({ items, linkAs: Link = 'a', className }: PostListProps) {
 	return (
 		<ul className={cx(styles.list, className)}>

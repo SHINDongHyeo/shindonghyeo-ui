@@ -10,7 +10,7 @@ export interface SectionTitleProps {
 	children: ReactNode;
 }
 
-/** 왼쪽에 그라데이션 막대가 붙은 섹션 제목 */
+/** 제목과 오른쪽 링크가 한 줄에 놓인 섹션 제목 */
 export function SectionTitle({ as: Heading = 'h2', action, className, children }: SectionTitleProps) {
 	return (
 		<div className={cx(styles.head, className)}>

@@ -6,13 +6,13 @@
 	height: 36px;
 	padding: 0;
 	border: none;
-	border-radius: 10px;
+	border-radius: var(--sd-radius-sm);
 	background: none;
 	color: var(--sd-text-muted);
 	cursor: pointer;
 	transition:
-		background-color 0.15s ease,
-		color 0.15s ease;
+		background-color var(--sd-duration-fast) var(--sd-ease),
+		color var(--sd-duration-fast) var(--sd-ease);
 }
 .iconButton:hover {
 	background: var(--sd-bg-subtle);

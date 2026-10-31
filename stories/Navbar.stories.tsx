@@ -9,7 +9,7 @@ const meta = {
 		docs: {
 			description: {
 				component:
-					'화면 위에 붙어 있는 반투명 메뉴바. `active`인 링크는 알약 모양으로 강조됩니다. Next.js에서는 `linkAs={Link}`로 `next/link`를 쓸 수 있습니다.',
+					'화면 위에 붙어 있는 반투명 메뉴바. `active`인 링크는 포인트 색 글자로 강조됩니다. Next.js에서는 `linkAs={Link}`로 `next/link`를 쓸 수 있습니다.',
 			},
 		},
 	},

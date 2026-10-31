@@ -2,8 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const colors = [
 	['--sd-accent', '포인트 색'],
-	['--sd-accent-2', '보조 포인트 색 (그라데이션 끝)'],
-	['--sd-gradient', '포인트 그라데이션'],
 	['--sd-accent-soft', '옅은 포인트 배경'],
 	['--sd-text-strong', '제목 글자'],
 	['--sd-text', '본문 글자'],
@@ -13,6 +11,7 @@ const colors = [
 	['--sd-bg-elevated', '카드, 버튼 배경'],
 	['--sd-border', '테두리'],
 	['--sd-code-bg', '인라인 코드 배경'],
+	['--sd-on-accent', '포인트 색 위 글자'],
 ];
 
 const radii = ['--sd-radius-xs', '--sd-radius-sm', '--sd-radius-md', '--sd-radius-lg', '--sd-radius-full'];

@@ -28,6 +28,6 @@
 }
 .primary {
 	border-color: transparent;
-	background: var(--sd-gradient);
+	background: var(--sd-accent);
 	color: var(--sd-on-accent);
 }

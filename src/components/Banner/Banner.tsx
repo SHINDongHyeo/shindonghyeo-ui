@@ -16,7 +16,7 @@ export interface BannerProps {
 	children?: ReactNode;
 }
 
-/** 그라데이션과 점 패턴 배경이 깔린 페이지 상단 배너 */
+/** 제목, 설명, 메타 정보를 담는 페이지 상단 머리말 */
 export function Banner({ eyebrow, title, description, wide = false, size = 'md', className, children }: BannerProps) {
 	return (
 		<section className={cx(styles.banner, className)}>

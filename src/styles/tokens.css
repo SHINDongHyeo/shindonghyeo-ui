@@ -1,26 +1,22 @@
 /*
  * 디자인 토큰
  * 색은 <html data-theme="dark">로 다크 모드가 바뀐다.
- * 사이트마다 포인트 색만 바꾸고 싶으면 --sd-accent, --sd-accent-2만 덮어쓰면 된다.
+ * 포인트 색은 청록 하나만 쓴다. 사이트마다 바꾸고 싶으면 --sd-accent만 덮어쓰면 된다.
  * 컴포넌트는 크기, 간격, 둥글기를 숫자로 직접 쓰지 않고 아래 단계 토큰만 쓴다.
  * (미디어 쿼리에는 변수를 못 쓰므로 모바일 기준 폭 640px만 숫자로 쓴다)
  */
 :root {
 	--sd-bg: #ffffff;
-	--sd-bg-subtle: #f6f8fa;
+	--sd-bg-subtle: #f6f7f8;
 	--sd-bg-elevated: #ffffff;
-	--sd-text: #2b3138;
-	--sd-text-strong: #0d1117;
+	--sd-text: #2f353c;
+	--sd-text-strong: #12161b;
 	--sd-text-muted: #6b7280;
 	--sd-border: #e6e8eb;
-	--sd-accent: #0d9488;
-	--sd-accent-2: #2563eb;
-	--sd-accent-soft: color-mix(in srgb, var(--sd-accent) 10%, transparent);
-	--sd-accent-2-soft: color-mix(in srgb, var(--sd-accent-2) 8%, transparent);
-	--sd-gradient: linear-gradient(120deg, var(--sd-accent), var(--sd-accent-2));
+	--sd-accent: #0f766e;
+	--sd-accent-soft: color-mix(in srgb, var(--sd-accent) 9%, transparent);
 	--sd-code-bg: #f1f3f5;
-	--sd-dot: rgba(13, 17, 23, 0.08);
-	--sd-shadow: 0 1px 2px rgba(13, 17, 23, 0.04), 0 8px 24px rgba(13, 17, 23, 0.06);
+	--sd-shadow: 0 1px 2px rgba(18, 22, 27, 0.04), 0 8px 24px rgba(18, 22, 27, 0.06);
 	--sd-selection: color-mix(in srgb, var(--sd-accent) 18%, transparent);
 	--sd-on-accent: #ffffff;
 
@@ -94,19 +90,17 @@
 }
 
 :root[data-theme='dark'] {
-	--sd-bg: #0e1013;
-	--sd-bg-subtle: #15181c;
-	--sd-bg-elevated: #1a1e23;
-	--sd-text: #cfd4da;
-	--sd-text-strong: #f3f4f6;
-	--sd-text-muted: #8b929b;
-	--sd-border: #262a30;
-	--sd-accent: #2dd4bf;
-	--sd-accent-2: #60a5fa;
+	--sd-bg: #0f1113;
+	--sd-bg-subtle: #16191c;
+	--sd-bg-elevated: #1a1e22;
+	--sd-text: #cdd2d8;
+	--sd-text-strong: #f2f4f6;
+	--sd-text-muted: #8a919a;
+	--sd-border: #24282d;
+	--sd-accent: #3cc6b2;
 	--sd-accent-soft: color-mix(in srgb, var(--sd-accent) 12%, transparent);
-	--sd-accent-2-soft: color-mix(in srgb, var(--sd-accent-2) 10%, transparent);
+	--sd-on-accent: #071512;
 	--sd-code-bg: #1d2126;
-	--sd-dot: rgba(255, 255, 255, 0.06);
 	--sd-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
 	--sd-selection: color-mix(in srgb, var(--sd-accent) 25%, transparent);
 	color-scheme: dark;

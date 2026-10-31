@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Banner, Button, CalendarIcon, Chip, ClockIcon, GitHubIcon, GradientText } from '../src';
+import { Banner, Button, CalendarIcon, Chip, ClockIcon, GitHubIcon, AccentText } from '../src';
 
 const meta = {
 	title: 'Layout/Banner',
 	component: Banner,
 	parameters: {
 		layout: 'fullscreen',
-		docs: { description: { component: '그라데이션과 점 패턴 배경이 깔린 페이지 상단 배너.' } },
+		docs: { description: { component: '제목, 설명, 메타 정보를 담는 페이지 상단 머리말.' } },
 	},
 	args: {
 		eyebrow: 'Archive',
@@ -34,7 +34,7 @@ export const Hero: Story = {
 			<>
 				안녕하세요,
 				<br />
-				<GradientText>개발자 신동혁</GradientText>입니다.
+				<AccentText>개발자 신동혁</AccentText>입니다.
 			</>
 		),
 		description: '개발하면서 배우고 만든 것들을 기록합니다.',
